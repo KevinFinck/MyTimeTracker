@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<timeCard>
+  <categories>
+    <category>General</category>
+  </categories>
+  <projects>
+    <project category="General">Project ABC</project>
+    <project>Project Also ABC</project>
+    <project category="General">Project XYZ</project>
+  </projects>
+  <xtasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Task>
+      <Name>Task1</Name>
+    </Task>
+    <Task ProjectName="Admin">
+      <Name>Task2</Name>
+    </Task>
+  </xtasks>
+  <timeEntries>
+    <timeEntry startTime="5/17/2013 8:00AM" endTime="5/17/2013 5:00PM" duration="" description="" task="" week="10"></timeEntry>
+    <timeEntry startTime="5/18/2013 10:00AM" endTime="" duration="" description="" task="" week="10"></timeEntry>
+  </timeEntries>
+  <tasks>
+    <Task>
+      <Name>New timecard entry</Name>
+    </Task>
+    <Task ProjectName="Some Project">
+      <Name>My New One</Name>
+    </Task>
+    <Task ProjectName="Some Project">
+      <Name>Second New One</Name>
+    </Task>
+  </tasks>
+</timeCard>

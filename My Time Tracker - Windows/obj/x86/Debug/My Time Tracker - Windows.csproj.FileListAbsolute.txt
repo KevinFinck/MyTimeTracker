@@ -1,0 +1,14 @@
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.exe
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.pdb
+C:\Dev\My Time Tracker\My Time Tracker - Windows\bin\Debug\MyTimeTracker.exe
+C:\Dev\My Time Tracker\My Time Tracker - Windows\bin\Debug\MyTimeTracker.pdb
+C:\Dev\My Time Tracker\My Time Tracker - Windows\bin\Debug\FinckInc.Toolkit.dll
+C:\Dev\My Time Tracker\My Time Tracker - Windows\bin\Debug\FinckInc.Toolkit.pdb
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\My Time Tracker - Windows.csprojResolveAssemblyReference.cache
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frmAbout.resources
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frmMain.resources
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frmEditProject.resources
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frmProjects.resources
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frmTest.resources
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.Properties.Resources.resources
+C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\My Time Tracker - Windows.csproj.GenerateResource.Cache

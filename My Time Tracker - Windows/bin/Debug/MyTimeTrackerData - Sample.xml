@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<timeCard>
+	
+	<categories>
+		<category>General</category>
+	</categories>
+	
+	<projects>
+		<project category="General">Project ABC</project>
+		<project>Project Also ABC</project>
+		<project category="General">Project XYZ</project>
+	</projects>
+
+	<tasks>
+		<task project="Project ABC">Do Stuff 1</task>
+		<task >Do Stuff 2</task>
+	</tasks>
+	
+	<timeEntries>
+		<timeEntry startTime="5/17/2013 8:00AM" endTime="5/17/2013 5:00PM" duration="" description="" task="" week="10"></timeEntry>
+		<timeEntry startTime="5/18/2013 10:00AM" endTime="" duration="" description="" task="" week="10"></timeEntry>
+	</timeEntries>
+	
+</timeCard>

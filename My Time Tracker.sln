@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BE12801-4AE9-4C4E-91F2-7F6C51DB8FF8}"
+	ProjectSection(SolutionItems) = preProject
+		Design Notes.docx = Design Notes.docx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My Time Tracker - Windows", "My Time Tracker - Windows\My Time Tracker - Windows.csproj", "{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time Tracker API", "Time Tracker API\Time Tracker API.csproj", "{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Debug|x86.ActiveCfg = Debug|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Debug|x86.Build.0 = Debug|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Release|Any CPU.ActiveCfg = Release|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Release|x86.ActiveCfg = Release|x86
+		{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}.Release|x86.Build.0 = Release|x86
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0A0FAE21-6D1C-46EA-931A-8A3E40B85C2A}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

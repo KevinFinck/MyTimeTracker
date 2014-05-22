@@ -1,0 +1,5 @@
+C:\Dev\Toolkit\FinckInc.Toolkit\bin\Debug\FinckInc.Toolkit.dll
+C:\Dev\Toolkit\FinckInc.Toolkit\bin\Debug\FinckInc.Toolkit.pdb
+C:\Dev\Toolkit\FinckInc.Toolkit\obj\Debug\FinckInc.Toolkit.csprojResolveAssemblyReference.cache
+C:\Dev\Toolkit\FinckInc.Toolkit\obj\Debug\FinckInc.Toolkit.dll
+C:\Dev\Toolkit\FinckInc.Toolkit\obj\Debug\FinckInc.Toolkit.pdb

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD46B312-F299-4A07-80DC-8D78EB5CE1BF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyTimeTracker</RootNamespace>
+    <AssemblyName>MyTimeTracker</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MyTimeTracker.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Clock_48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FinckInc.Toolkit, Version=1.0.3.39102, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\FinckInc.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2013.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2013.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2013.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2013.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2013.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Category.cs" />
+    <Compile Include="Classes\CategoryList.cs" />
+    <Compile Include="Classes\CategoryManager.cs" />
+    <Compile Include="Classes\ITest.cs" />
+    <Compile Include="Classes\RegistryManager.cs" />
+    <Compile Include="Classes\TimeEntryManager.cs" />
+    <Compile Include="Classes\Task.cs" />
+    <Compile Include="Classes\XElementList.cs" />
+    <Compile Include="Classes\XmlDataSource.cs" />
+    <Compile Include="Classes\Project.cs" />
+    <Compile Include="Classes\ProjectManager.cs" />
+    <Compile Include="Classes\TaskManager.cs" />
+    <Compile Include="Classes\TimeCard.cs" />
+    <Compile Include="Classes\XmlDataSourceBase.cs" />
+    <Compile Include="Classes\MostRecentUsed.cs" />
+    <Compile Include="Classes\RegistryTool.cs" />
+    <Compile Include="Classes\TimeEntry.cs" />
+    <Compile Include="Classes\Util.cs" />
+    <Compile Include="Classes\XmlCategories.cs" />
+    <Compile Include="Classes\XmlItemsBase.cs" />
+    <Compile Include="Classes\XmlList.cs" />
+    <Compile Include="Classes\XmlManager.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProject.Designer.cs">
+      <DependentUpon>frmEditProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProjects.Designer.cs">
+      <DependentUpon>frmProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTrackerContext.cs" />
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\ProgramInfo.cs" />
+    <Compile Include="Support\SingleInstance.cs" />
+    <Compile Include="Support\WinAPI.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProject.resx">
+      <DependentUpon>frmEditProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProjects.resx">
+      <DependentUpon>frmProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\MyTimeTracker.Classes.Project.datasource" />
+    <None Include="Properties\DataSources\MyTimeTracker.Classes.TimeRecord.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start_16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop_16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Time.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\MyTimeTrackerData - Sample.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\Debug\MyTimeTrackerData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+C:\Dev\Toolkit\Integra.Toolkit\bin\Debug\FinckInc.Toolkit.dll
+C:\Dev\Toolkit\Integra.Toolkit\bin\Debug\FinckInc.Toolkit.pdb
+C:\Dev\Toolkit\Integra.Toolkit\obj\Debug\FinckInc.Toolkit.dll
+C:\Dev\Toolkit\Integra.Toolkit\obj\Debug\FinckInc.Toolkit.pdb
+C:\Dev\Toolkit\Integra.Toolkit\obj\Debug\Toolkit.csprojResolveAssemblyReference.cache

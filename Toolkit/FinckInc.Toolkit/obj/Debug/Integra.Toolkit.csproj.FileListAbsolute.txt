@@ -1,0 +1,11 @@
+C:\WS\Operations\Toolkit\Integra.Toolkit\bin\Debug\Integra.Toolkit.dll
+C:\WS\Operations\Toolkit\Integra.Toolkit\bin\Debug\Integra.Toolkit.pdb
+C:\WS\Operations\Toolkit\Integra.Toolkit\obj\Debug\Integra.Toolkit.dll
+C:\WS\Operations\Toolkit\Integra.Toolkit\obj\Debug\Integra.Toolkit.pdb
+C:\WS\Operations\Toolkit\Integra.Toolkit\bin\Debug\log4net.dll
+C:\WS\Operations\Toolkit\Integra.Toolkit\bin\Debug\Log4NetAppenders.dll
+C:\Dev\Toolkit\Integra.Toolkit\bin\Debug\Integra.Toolkit.dll
+C:\Dev\Toolkit\Integra.Toolkit\bin\Debug\Integra.Toolkit.pdb
+C:\Dev\Toolkit\Integra.Toolkit\obj\Debug\Integra.Toolkit.csprojResolveAssemblyReference.cache
+C:\Dev\Toolkit\Integra.Toolkit\obj\Debug\Integra.Toolkit.dll
+C:\Dev\Toolkit\Integra.Toolkit\obj\Debug\Integra.Toolkit.pdb

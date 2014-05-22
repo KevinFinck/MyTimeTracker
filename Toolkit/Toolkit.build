@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="BusinessLibrary" default="Help" xmlns="http://nant.sf.net/schemas/nant.xsd">
+
+	<property name="nant.settings.currentframework" value="net-4.0" />
+
+	<!-- Custom Script -->
+	<script language="C#" prefix="code">
+		<code>
+			<![CDATA[
+			[Function("format-date")]
+			public static string ToString(DateTime value, string format) {
+				return value.ToString(format);
+			}
+			]]>
+		</code>
+	</script>
+
+	<!-- Load up external libraries -->
+	<loadtasks assembly="X:\NAnt\NAnt.Contrib.Tasks.dll"/>
+	<loadtasks assembly="X:\NAnt\Integra.NAnt\2.0\Integra.NAnt.dll"/>
+
+	<!-- Environments.xml information -->
+	<property name="environments.loc"	value="X:\Deploy\Environments.xml"/>
+	<property name="environments.uri"	value="http://tempuri.org/Environments.xsd"/>
+	<property name="environments.version.expected" value="1.0"/>
+
+	<!-- Additional properties -->
+	<property name="project.sln"		value="Integra.Toolkit.csproj"/>
+	<property name="project.root"		value="${project::get-base-directory()}"/>
+	<property name="project.name"		value="Gateway"/>
+	<property name="project.version"	value="2.2"/>
+
+	<property name="deploy.path"		value="X:\Integra\Toolkit\v1_0_x"/>
+	<property name="deploy.path.prod"	value="\\idcbuildbox1\devlibrary\Integra\Toolkit\v1_0_x"/>
+
+	<property name="debug"				value="true" overwrite="false"/>
+	<property name="env"        		value="dev" overwrite="false"/>
+	<property name="build.config"		value="" />
+
+
+	<!-- nDoc2 properties -->
+	<property name="ndoc.path"  value="X:\nDoc2" readonly="true"/>
+
+	<!-- CheckSettings -->
+	<target name="CheckSettings"
+		description="Verify proper parameters have been passed in">
+
+		<if test="${not property::exists('debug')}">
+			<fail message="The 'debug' property must be specified."/>
+		</if>
+
+		<if test="${not property::exists('env')}">
+			<fail message="The 'env' property must be specified."/>
+		</if>
+
+		<if test="${property::get-value('debug') == ''}">
+			<fail message="The 'debug' property is empty or missing."/>
+		</if>
+
+		<if test="${not integra::is-environment-valid(property::get-value('environments.loc'), property::get-value('env'))}">
+			<fail message="Invalid environment passed or missing.  Use only those values specified in the validEnvironments element in the Environments.xml file."/>
+		</if>
+
+		<!-- Verify expected Environments.xml version is equal to the actual value. -->
+		<xmlpeek file="${environments.loc}" property="environments.version.actual"
+			xpath="x:environments/@version">
+			<namespaces>
+				<namespace prefix="x" uri="${environments.uri}"/>
+			</namespaces>
+		</xmlpeek>
+		<if test="${environments.version.expected != environments.version.actual}">
+			<fail message="The expected and actual versions of Environments.xml do not match. Expected ${environments.version.expected}, and was ${environments.version.actual}."/>
+		</if>
+
+		<!-- Get environment prefix -->
+		<xmlpeek file="${environments.loc}" property="environments.prefix"
+			xpath="x:environments/x:validEnvironments/x:add[@name='${env}']/@append">
+			<namespaces>
+				<namespace prefix="x" uri="${environments.uri}"/>
+			</namespaces>
+		</xmlpeek>
+
+		<if test="${debug}">
+			<property name="build.config" value="Debug"/>
+		</if>
+		<if test="${not debug}">
+			<property name="build.config" value="Release"/>
+		</if>
+
+		<echo message=""/>
+		<echo message=" *** debug = ${debug}"/>
+		<echo message=" *** env   = ${env}" />
+	</target>
+
+	<target name="All"
+		description="Runs a complete build cycle on the application, including getting the latest source code, building it, then deploying it."
+		depends="GetLatest, BuildAndDeploy, Document">
+	</target>
+
+	<target name="BuildAndDeploy"
+		description="Builds and deploys the currently available source code."
+		depends="Build, Deploy">
+	</target>
+
+	<target name="GetLatest" >
+		<choose>
+			<when test="${file::exists('C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\TF.exe')}">
+				<exec program="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\TF.exe">
+					<arg value="get" />
+					<arg value="." />
+					<arg value="/version:T" />
+					<arg value="/recursive" />
+					<arg value="/force" />
+				</exec>
+			</when>
+			<when test="${file::exists('C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\TF.exe')}">
+				<exec program="C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\TF.exe">
+					<arg value="get" />
+					<arg value="." />
+					<arg value="/version:T" />
+					<arg value="/recursive" />
+					<arg value="/force" />
+				</exec>
+			</when>
+			<otherwise>
+				<fail message="Unable to locate TFS command line program." />
+			</otherwise>
+		</choose>
+	</target>
+
+	<target name="Clean"
+		description="Cleans the solution."
+		depends="CheckSettings">
+		<msbuild project="${project.sln}">
+			<property name="Configuration" value="${build.config}"/>
+			<arg value="/t:Clean"/>
+		</msbuild>
+	</target>
+
+	<target name="Build"
+		description="Builds the currently available source code."
+		depends="CheckSettings, Clean">
+		<msbuild project="${project.sln}">
+			<property name="Configuration" value="${build.config}"/>
+			<arg value="/t:rebuild"/>
+		</msbuild>
+	</target>
+
+	<target name="Archive" description="Archives any existing files to the Integra backup DFS share." depends="CheckSettings">
+		<property name="backuprequired" value="no"/>
+		<if test="${env == 'prod'}">
+			<property name="backuprequired" value="yes"/>
+		</if>
+		<if test="${env == 'pss'}">
+			<property name="backuprequired" value="yes"/>
+		</if>
+		<if test="${env == 'uat'}">
+			<property name="backuprequired" value="yes"/>
+		</if>
+
+		<if test="${backuprequired == 'yes'}">
+			<if test="${env == 'prod'}">
+				<property name="project.deploy.path" value="${deploy.path.prod}" />
+			</if>
+			<if test="${env != 'prod'}">
+				<property name="project.deploy.path" value="${deploy.path}" />
+			</if>
+			<choose>
+				<when test="${env == 'prod'}">
+					<property name="backup.env" value="prd"/>
+				</when>
+				<otherwise>
+					<property name="backup.env" value="${env}"/>
+				</otherwise>
+			</choose>
+
+			<property name="project.archive.path" value="\\integra\itdata\${backup.env}\BACKUPS\${project.name}\BusinessLayer_${code::date-stamp()}.zip"/>
+			<echo message="Archiving From: ${project.deploy.path}"/>
+
+			<if test="${not file::exists(property::get-value('project.archive.path'))}">
+				<zip zipfile="${project.archive.path}">
+					<fileset basedir="${project.deploy.path}">
+						<include name="**.*"/>
+					</fileset>
+				</zip>
+			</if>
+		</if>
+	</target>
+
+	<target name="Document"
+		description="Generate Documentation.">
+		<exec program="${ndoc.path}\NDocConsole.exe" verbose="true">
+			<arg line="-documenter=MSDN-CHM -project=BusinessLibrary.ndoc" />
+		</exec>
+	</target>
+
+
+	<target name="Deploy"
+		description="Deploys the currently compiled source."
+		depends="CheckSettings, Archive, DoDeploy">
+	</target>
+
+	<target name="Local"
+		description="Deploys the currently compiled source."
+		depends="DoDeploy">
+	</target>
+
+
+	<!-- Deploy the application -->
+	<target name="DoDeploy" description="Deploys the currently compiled source.">
+		<if test="${env == 'prod'}">
+			<property name="project.deploy.path" value="${deploy.path.prod}" />
+		</if>
+		<if test="${env != 'prod'}">
+			<property name="project.deploy.path" value="${deploy.path}" />
+		</if>
+
+		<echo message="Copy to: ${project.deploy.path}"/>
+		<echo message="File   : ${project.root}\bin\${build.config}\Integra.BusinessLibrary.${project.name}.dll"/>
+		<echo message="File   : ${project.root}\bin\${build.config}\Integra.Shared.${project.name}.dll"/>
+
+		<echo message=""/>
+		<echo message="Copying files..."/>
+		<copy todir="${project.deploy.path}" includeemptydirs="false">
+			<fileset basedir="${project.root}\bin\${build.config}">
+				<include name="Integra.BusinessLibrary.${project.name}.dll"/>
+				<include name="Integra.Shared.${project.name}.dll"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${project.deploy.path}" includeemptydirs="false">
+			<fileset basedir="${project.root}\Doc">
+				<include name="*.chm"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="ShowSettings"
+		description="Display script Settings."
+		depends="CheckSettings" >
+		<echo message="project.sln      : ${project.sln}"/>
+		<echo message="project.root     : ${project.root}"/>
+		<echo message="project.name     : ${project.name}"/>
+		<echo message="project.version  : ${project.version}"/>
+		<echo message="deploy.path      : ${deploy.path}"/>
+		<echo message="deploy.path.prod : ${deploy.path.prod}"/>
+		<echo message="build.config     : ${build.config}" />
+		<echo message=""/>
+		<echo message="debug : ${debug}"/>
+		<echo message="env   : ${env}"/>
+	</target>
+
+	<target name="Help">
+		<echo message="Admin.build"/>
+		<echo message="Usage:"/>
+		<echo message=" NAnt -D:debug={false|true} -D:env={environment} {target}"/>
+		<echo message=""/>
+		<echo message=" -- All"/>
+		<echo message=" -- GetLatest"/>
+		<echo message=" -- Clean"/>
+		<echo message=" -- Build"/>
+		<echo message=" -- BuildAndDeploy"/>
+		<echo message=" -- Deploy"/>
+		<echo message=" -- Local (Deploy without archive)"/>
+		<echo message=" -- Document"/>
+		<echo message=" -- ShowSettings"/>
+	</target>
+</project>

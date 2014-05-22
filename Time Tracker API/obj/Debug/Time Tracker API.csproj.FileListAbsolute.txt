@@ -1,0 +1,7 @@
+C:\Dev\My Time Tracker\Time Tracker API\bin\Debug\TimeTrackerAPI.dll
+C:\Dev\My Time Tracker\Time Tracker API\bin\Debug\TimeTrackerAPI.pdb
+C:\Dev\My Time Tracker\Time Tracker API\bin\Debug\nunit.framework.dll
+C:\Dev\My Time Tracker\Time Tracker API\bin\Debug\nunit.framework.xml
+C:\Dev\My Time Tracker\Time Tracker API\obj\Debug\Time Tracker API.csprojResolveAssemblyReference.cache
+C:\Dev\My Time Tracker\Time Tracker API\obj\Debug\TimeTrackerAPI.dll
+C:\Dev\My Time Tracker\Time Tracker API\obj\Debug\TimeTrackerAPI.pdb

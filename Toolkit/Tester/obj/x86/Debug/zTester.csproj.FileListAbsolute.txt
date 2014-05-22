@@ -1,0 +1,8 @@
+C:\Dev\Toolkit\Tester\obj\x86\Debug\Tester.exe
+C:\Dev\Toolkit\Tester\obj\x86\Debug\Tester.pdb
+C:\Dev\Toolkit\Tester\bin\Debug\Tester.exe.config
+C:\Dev\Toolkit\Tester\bin\Debug\Tester.exe
+C:\Dev\Toolkit\Tester\bin\Debug\Tester.pdb
+C:\Dev\Toolkit\Tester\bin\Debug\FinckInc.Toolkit.dll
+C:\Dev\Toolkit\Tester\bin\Debug\FinckInc.Toolkit.pdb
+C:\Dev\Toolkit\Tester\obj\x86\Debug\zTester.csprojResolveAssemblyReference.cache

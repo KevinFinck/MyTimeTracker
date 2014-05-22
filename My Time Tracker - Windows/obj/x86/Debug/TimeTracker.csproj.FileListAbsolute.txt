@@ -1,0 +1,9 @@
+C:\Dev\TimeTracker\bin\Debug\TimeTracker.exe
+C:\Dev\TimeTracker\bin\Debug\TimeTracker.pdb
+C:\Dev\TimeTracker\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Dev\TimeTracker\obj\x86\Debug\TimeTracker.frmMain.resources
+C:\Dev\TimeTracker\obj\x86\Debug\TimeTracker.Properties.Resources.resources
+C:\Dev\TimeTracker\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Dev\TimeTracker\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Dev\TimeTracker\obj\x86\Debug\TimeTracker.exe
+C:\Dev\TimeTracker\obj\x86\Debug\TimeTracker.pdb
