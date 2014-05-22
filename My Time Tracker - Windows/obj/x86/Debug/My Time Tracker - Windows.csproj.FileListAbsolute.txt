@@ -12,3 +12,5 @@ C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frm
 C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.frmTest.resources
 C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.Properties.Resources.resources
 C:\Dev\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\My Time Tracker - Windows.csproj.GenerateResource.Cache
+C:\Dev\GitHub\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.exe
+C:\Dev\GitHub\My Time Tracker\My Time Tracker - Windows\obj\x86\Debug\MyTimeTracker.pdb

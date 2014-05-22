@@ -13,6 +13,8 @@ namespace MyTimeTracker
 		{
 			InitializeComponent();
 
+			// Check me in . . .
+
 			//  Initialize the AboutBox to display the product information from the assembly information.
 			//  Change assembly information settings for your application through either:
 			//  - Project->Properties->Application->Assembly Information
